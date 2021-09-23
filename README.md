@@ -1,10 +1,15 @@
 # A set of simple and equal benchmarks.
 This compares Robyn, Starlette and FastAPI.
 
+This is run on a rather powerful i7 8700k @ 5Ghz, servers are ran as they
+are expected to be used in prod i.e uvicorn runs the ASGI apps with n workers 
+equal to the logical CPU count.
+
 Results done via oha and the CLI command is as follows:
 
 # Robyn oha --no-tui --insecure --latency-correction -c 500 -n 100000 http://127.0.0.1:5000
-```Summary:
+```
+Summary:
   Success rate:	1.0000
   Total:	4.1176 secs
   Slowest:	0.0643 secs
@@ -47,7 +52,8 @@ Status code distribution:
 ```
 
 # Starlette oha --no-tui --insecure --latency-correction -c 500 -n 100000 http://127.0.0.1:8000
-```Summary:
+```
+Summary:
   Success rate:	1.0000
   Total:	0.9011 secs
   Slowest:	0.1057 secs
@@ -86,7 +92,8 @@ Details (average, fastest, slowest):
   DNS-lookup:	0.0000 secs, 0.0000 secs, 0.0021 secs
 
 Status code distribution:
-  [200] 100000 responses```
+  [200] 100000 responses
+ ```
   
 
 # FastAPI oha --no-tui --insecure --latency-correction -c 500 -n 100000 http://127.0.0.1:8800
