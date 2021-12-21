@@ -13,4 +13,4 @@ async def root():
 
 
 if __name__ == '__main__':
-    uvicorn.run("test_fastapi:app", port=8800, log_level="warning", workers=os.cpu_count())
+    uvicorn.run("test_fastapi:app", port=8800, log_level="warning", workers=7)
