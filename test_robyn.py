@@ -3,8 +3,8 @@ from robyn import Robyn
 app = Robyn(__file__)
 
 
-@app.get("/")
+@app.get("/", const=True)
 async def h(_):
     return "Hello, world!"
 
-app.start(port=5002)
+app.start(port=5000)
